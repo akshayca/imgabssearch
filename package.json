@@ -1,0 +1,19 @@
+{
+	"name": "img-search-abstraction-api-project",
+	"dependencies": {
+		"express": "^4.14.0",
+    "mongodb": "2.2.30",
+    "bl": "1.2.1"
+	},
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"engines": {
+		"node": "4.4.5"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/akshayca/imgabssearch.git"
+	}
+}

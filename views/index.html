@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<html>
+
+   <head>
+      <title>Image Search Abstraction Layer</title>
+      <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet" type="text/css">
+      <link href="/public/style.css" rel="stylesheet" type="text/css">
+   </head>
+
+   <body>
+      <div class="container">
+         <h1>Image Search Abstraction Layer API Project</h1>
+        
+       
+         
+        <div id = "user-stories">
+          <div id = "user-stories-text">
+          <p>User Story:</p>
+          <ul>
+            <li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
+            <li>I can paginate through the responses by adding a ?offset=2 parameter to the URL.</li>
+            <li>I can get a list of the most recently submitted search strings.</li>
+          </ul>
+          </div>
+        </div>
+        
+        
+       
+        <div>
+          <h3>INPUT:</h3>
+          <a href="https://akshayca-abs-img.glitch.me/api/cats?offset=10" target = "_blank"><code>https://akshayca-abs-img.glitch.me/api/cats?offset=10</code></a>
+          <br>
+          <a href="https://akshayca-abs-img.glitch.me/latest" target = "_blank"><code>https://akshayca-abs-img.glitch.me/latest</code></a>
+        </div>
+        <div>
+          <h3>OUTPUT:</h3>
+          <code>[
+{
+URL: "https://pixabay.com/get/e833b40d20f6033ed95c4518b74a4694e776ebdd04b0144194f2c67fa0e4bc_640.jpg",
+Tags: "cat, red, cute",
+Thumbnail: "https://cdn.pixabay.com/photo/2016/09/07/22/38/cat-1652822_150.jpg",
+Context: "https://pixabay.com/en/cat-red-cute-mackerel-tiger-sweet-1652822/"
+},
+{
+URL: "https://pixabay.com/get/e836b20b21f3013ed95c4518b74a4694e776ebdd04b0144194f2c67fa0e4bc_640.jpg",
+Tags: "cat, face, close",
+Thumbnail: "https://cdn.pixabay.com/photo/2016/04/17/16/10/cat-1334970_150.jpg",
+Context: "https://pixabay.com/en/cat-face-close-view-eyes-portrait-1334970/"
+},
+{
+URL: "https://pixabay.com/get/e83db00821f3013ed95c4518b74a4694e776ebdd04b0144194f2c67fa0e4bc_640.jpg",
+Tags: "cat, face, goldfish",
+Thumbnail: "https://cdn.pixabay.com/photo/2016/11/11/23/34/cat-1817970_150.jpg",
+Context: "https://pixabay.com/en/cat-face-goldfish-glass-close-1817970/"
+},
+{
+URL: "https://pixabay.com/get/e833b40d20fc013ed95c4518b74a4694e776ebdd04b0144194f2c67fa0e4bc_640.jpg",
+Tags: "cat, red, cute",
+Thumbnail: "https://cdn.pixabay.com/photo/2016/09/07/23/10/cat-1652880_150.jpg",
+Context: "https://pixabay.com/en/cat-red-cute-mackerel-tiger-sweet-1652880/"
+},
+{
+URL: "https://pixabay.com/get/e833b5082ff3043ed95c4518b74a4694e776ebdd04b0144194f2c67fa0e4bc_640.jpg",
+Tags: "cat, kitten, tree",
+Thumbnail: "https://cdn.pixabay.com/photo/2016/09/05/21/37/cat-1647775_150.jpg",
+Context: "https://pixabay.com/en/cat-kitten-tree-green-summer-1647775/"
+},
+{
+URL: "https://pixabay.com/get/ee32b90c29f11c2ad65a5854e04c4492e27eeac818b4114097f7c77eaee4_640.jpg",
+Tags: "cat, animals, cats",
+Thumbnail: "https://cdn.pixabay.com/photo/2015/05/22/05/52/cat-778315_150.jpg",
+Context: "https://pixabay.com/en/cat-animals-cats-portrait-of-cat-778315/"
+},
+{
+URL: "https://pixabay.com/get/ef31b80e2ef01c2ad65a5854e04c4492e27eeac818b4114097f7c77eaee4_640.jpg",
+Tags: "cat, favorite, relaxation",
+Thumbnail: "https://cdn.pixabay.com/photo/2015/02/25/17/56/cat-649164_150.jpg",
+Context: "https://pixabay.com/en/cat-favorite-relaxation-rest-649164/"
+},
+{
+URL: "https://pixabay.com/get/e034b50e29f41c2ad65a5854e04c4492e27eeac818b4114097f7c77eaee4_640.jpg",
+Tags: "cat, kitten, rozkošné",
+Thumbnail: "https://cdn.pixabay.com/photo/2015/08/30/10/58/cat-914110_150.jpg",
+Context: "https://pixabay.com/en/cat-kitten-rozko%C5%A1n%C3%A9-little-wood-914110/"
+},
+{
+URL: "https://pixabay.com/get/e834b80d28f6073ed95c4518b74a4694e776ebdd04b0144194f2c67fa0e4bc_640.jpg",
+Tags: "cat, pet, striped",
+Thumbnail: "https://cdn.pixabay.com/photo/2016/02/10/16/37/cat-1192026_150.jpg",
+Context: "https://pixabay.com/en/cat-pet-striped-kitten-young-1192026/"
+},
+{
+URL: "https://pixabay.com/get/ee37b70620fd1c2ad65a5854e04c4492e27eeac818b4114097f7c77eaee4_640.jpg",
+Tags: "domestic cat, cat, adidas",
+Thumbnail: "https://cdn.pixabay.com/photo/2015/04/17/09/36/domestic-cat-726989_150.jpg",
+Context: "https://pixabay.com/en/domestic-cat-cat-adidas-relaxed-726989/"
+}
+]</code>
+        </div>
+        
+        <div>
+          <h3>Example Latest Usage</h3>   
+          <code>[
+{
+term: "cats",
+when: "Fri Jul 28 2017 21:19:59 GMT+0000 (UTC)"
+},
+{
+term: "lolcats",
+when: "Fri Jul 28 2017 21:19:55 GMT+0000 (UTC)"
+},
+{
+term: "lolcats funny",
+when: "Fri Jul 28 2017 21:19:31 GMT+0000 (UTC)"
+},
+{
+term: "sunrise",
+when: "Fri Jul 28 2017 21:17:37 GMT+0000 (UTC)"
+},
+{
+term: "sunrise",
+when: "Fri Jul 28 2017 21:16:56 GMT+0000 (UTC)"
+},
+{
+term: "toto wizard",
+when: "Fri Jul 28 2017 21:14:45 GMT+0000 (UTC)"
+},
+{
+term: "toto wizard",
+when: "Fri Jul 28 2017 21:14:42 GMT+0000 (UTC)"
+},
+{
+term: "toto wizard",
+when: "Fri Jul 28 2017 21:14:29 GMT+0000 (UTC)"
+},
+{
+term: "new york",
+when: "Fri Jul 28 2017 21:13:24 GMT+0000 (UTC)"
+},
+{
+term: "seattle+skyline",
+when: "Fri Jul 28 2017 21:12:47 GMT+0000 (UTC)"
+}
+]</code>
+        </div>
+          
+        <div class = "credits">
+          <p>
+            Powered by <a href="https://www.pixabay.com" target = "_blank">Pixabay.com</a>
+          </p>
+        </div>
+          
+        
+      </div>
+   </body>
+<footer><a href="https://akshayca.github.io/">AKSHAY C A</a> | 2017</footer>
+</html>
